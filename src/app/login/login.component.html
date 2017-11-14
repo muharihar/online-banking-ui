@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <form class="form-signin" (ngSubmit)="onSubmit()" [hidden]="loggedIn">
+    <h3 class="clean-font"  style="color:black;">Please Login</h3>
+
+    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Username" name="username" required autofocus="" />
+    <br />
+
+    <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password" required />
+    <div class="form-group">
+      <br/>
+      <label >
+        <input type="checkbox" name="remember-me" id="remember-me" />&nbsp;<span class="clean-font">Remember me</span>
+      </label>
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">Login</button>
+  </form>
+  <br/><br/>
+  <div class="form-signin" (ngSubmit)="onSubmit()" [hidden]="loggedIn">
+    <div class="form-group">
+      <br/>
+    </div>
+    <form (ngSubmit)="redirectToToken()">
+    <button class="btn btn-primary btn-block">Sign Up</button>
+    </form>
+  </div>
+  <div [hidden]="!loggedIn">
+    <h2>Welcome to ABC Online Banking Portal!</h2>
+    <br/><br/>
+  </div>
+</div>
+
