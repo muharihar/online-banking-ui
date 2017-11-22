@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     password: string;
 
     constructor (private loginService: LoginService, private router : Router) {
-        if(localStorage.getItem('PortalAdminHasLoggedIn') == '' || localStorage.getItem('PortalAdminHasLoggedIn') == null) {
+        if(localStorage.getItem('PortalAdminHasLoggedIn') == null || localStorage.getItem('PortalAdminHasLoggedIn') == '' ) {
             this.loggedIn = false;
         } else {
             this.loggedIn = true;
@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     }
 
     redirectToToken(){
-      //location.assign("./token");
       this.router.navigate(["./token"]);
       console.log("Redirecting to Token");
     }

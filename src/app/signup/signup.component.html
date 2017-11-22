@@ -1,97 +1,41 @@
-<div [style.display]="getDisplay()" >
+<div [style.display]="getDisplay()">
   <div class="row main">
     <div class="panel-heading">
       <div class="panel-title text-center">
         <h1 class="title">Sign Up</h1>
-        <hr />
+        <hr/>
       </div>
     </div>
     <div class="main-login main-center">
-      <form class="form-horizontal" method="post" action="@{/signup}">
+      <form class="form-horizontal" method="post" (ngSubmit)="sendSubmit()">
 
-        <div class="form-group">
-          <label for="firstName" class="cols-sm-2 control-label">First Name</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" value="${user.firstName}" id="firstName" name="firstName" roleId="firstname"  placeholder="Enter your first name" required="required"/>
-            </div>
-          </div>
-        </div>
+        <label for="firstName" class="cols-sm-2 control-label">First Name</label>
+        <input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>
 
-        <div class="form-group">
-          <label for="lastName" class="cols-sm-2 control-label">Last Name</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" value="${user.lastName}" id="lastName" name="lastName" roleId="lastName"  placeholder="Enter your last name" required="required"/>
-            </div>
-          </div>
-        </div>
+        <label for="lastName" class="cols-sm-2 control-label">Last Name</label>
+        <input type="text" class="form-control" value="{{userList?.last_name}}" id="lastName" readonly/>
 
-        <div class="form-group">
-          <label for="phone" class="cols-sm-2 control-label">Phone</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" value="${user.phone}" id="phone" name="phone" roleId="phone"  placeholder="xxx-xxx-xxxx" required="required"/>
-            </div>
-          </div>
-        </div>
+        <label for="phone" class="cols-sm-2 control-label">National ID Number</label>
+        <input type="text" class="form-control" value="{{userList?.national_id}}" id="phone" readonly/>
 
-        <div class="form-group">
-          <label for="email" class="cols-sm-2 control-label">Your Email</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" value="${user.email}" id="email" name="email" roleId="email"  placeholder="Enter your Email" required="required"/>
-            </div>
-          </div>
-        </div>
+        <label for="email" class="cols-sm-2 control-label">Email</label>
+        <input type="text" class="form-control" value="{{userList?.email}}" id="email" readonly/>
 
-        <div class="form-group">
-          <label for="username" class="cols-sm-2 control-label">Username</label><span class="bg-danger pull-right" th:if="${usernameExists}">Username already exists</span>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" value="${user.username}" id="username" name="username" roleId="username"  placeholder="Enter your Username" required="required"/>
-            </div>
-          </div>
-        </div>
+        <label for="email" class="cols-sm-2 control-label">Birth Day</label>
+        <input type="text" class="form-control" value="{{userList?.birth_date}}" id="birthday" readonly/>
 
-        <div class="form-group">
-          <label for="password" class="cols-sm-2 control-label">Password</label>
-          <div class="cols-sm-10">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-              <input type="password" class="form-control" value="${user.password}" id="password" name="password" roleId="password"  placeholder="Enter your Password" required="required"/>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input id="showPassword" type="checkbox" />Show Password
-              </label>
-            </div>
-          </div>
-        </div>
+        <label class="cols-sm-2 control-label">Username</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="username"
+               placeholder="Enter your Username" required="required"/>
 
-        <!--<div class="form-group">-->
-        <!--<label for="confirm" class="cols-sm-2 control-label">Confirm Secret</label>-->
-        <!--<div class="cols-sm-10">-->
-        <!--<div class="input-group">-->
-        <!--<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>-->
-        <!--<input type="secret" class="form-control" name="confirm" roleId="confirm"  placeholder="Confirm your Secret" required="required"/>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
+        <label class="cols-sm-2 control-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password"
+               roleId="password" placeholder="Enter your Password" required="required"/>
+        <br/><br/>
+        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Sign up!</button>
+        <hr/>
         <div class="form-group ">
-          <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Sign up!</button>
-        </div>
-
-        <hr />
-
-        <div class="form-group ">
-          <a  class="btn btn-info btn-lg btn-block login-button">Cancel</a>
+          <a class="btn btn-info btn-lg btn-block login-button">Cancel</a>
         </div>
       </form>
     </div>

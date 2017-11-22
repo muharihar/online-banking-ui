@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   loggedIn: boolean;
 
   constructor(private loginService: LoginService, private router : Router) {
-    if(localStorage.getItem('PortalAdminHasLoggedIn') == '') {
+    if(localStorage.getItem('PortalAdminHasLoggedIn') == '' || localStorage.getItem('PortalAdminHasLoggedIn') == null) {
       this.loggedIn = false;
     } else {
       this.loggedIn = true;
@@ -21,15 +21,17 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.loginService.logout().subscribe(
         res => {
-          localStorage.setItem('PortalAdminHasLoggedIn', '');
+          //console.log("Arrived : " + this.loggedIn);
+          localStorage.setItem("PortalAdminHasLoggedIn",'');
+          location.reload();
+          this.router.navigate(['/login']);
         },
         err => console.log(err)
     );
-    location.reload();
-    this.router.navigate(['/login']);
   }
 
   getDisplay() {
+    console.log("User Login : " + this.loggedIn);
     if(!this.loggedIn){
       return "none";
     } else {
