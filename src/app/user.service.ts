@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
+import { environment } from 'environments/environment.prod';
 
+const balURL = environment.ballerinaUrl;
 
 @Injectable()
 export class UserService {
 
   constructor (private http:Http){}
+
+  getAccountList(){
+    let url = balURL + "/account/getinfo";
+    return this.http.get(url, { withCredentials: true });
+  }
 
   getUsers() {
     let url = "http://localhost:9090/api/getuser";
