@@ -7,6 +7,7 @@ import {UserAccountComponent} from "./user-account/user-account.component";
 import {PrimaryTransactionComponent} from "./primary-transaction/primary-transaction.component";
 import {SavingsTransactionComponent} from "./savings-transaction/savings-transaction.component";
 import {AppointmentComponent} from "./appointment/appointment.component";
+import {AccountComponent} from "./account/account.component";
 
 
 const appRoutes: Routes = [
@@ -42,7 +43,11 @@ const appRoutes: Routes = [
     {
         path: 'appointment',
         component: AppointmentComponent
-    }
+    },
+    {
+    path: 'accounts',
+    component: AccountComponent
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

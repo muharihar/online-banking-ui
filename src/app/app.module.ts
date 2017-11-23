@@ -17,6 +17,7 @@ import { SavingsTransactionComponent } from './savings-transaction/savings-trans
 import { AppointmentComponent } from './appointment/appointment.component';
 import {AppointmentService} from "./appointment.service";
 import {TokenComponent} from "./signup/token.component";
+import {AccountComponent} from "./account/account.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {TokenComponent} from "./signup/token.component";
     UserAccountComponent,
     PrimaryTransactionComponent,
     SavingsTransactionComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

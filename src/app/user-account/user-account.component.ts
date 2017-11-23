@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {UserService} from '../user.service';
+import {SignupService} from '../signup.service';
 
 @Component({
   selector: 'app-user-account',
@@ -8,42 +8,42 @@ import {UserService} from '../user.service';
 })
 export class UserAccountComponent implements OnInit {
 
-  userList: Object[];
+  userInfo: Object;
 
-  constructor(private userService: UserService, private router: Router) {
-    this.getUsers();
+  constructor(private userService: SignupService, private router: Router) {
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe(
+    this.userService.getUserProfile().subscribe(
         res => {
-          this.userList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
-          console.log(this.userList);
+          this.userInfo = JSON.parse(JSON.parse(JSON.stringify(res))._body)[0];
+          console.log(this.userInfo);
+          console.log(JSON.stringify(res));
         },
         error => console.log(error)
     )
   }
 
-  onSelectPrimary(username: string) {
-    this.router.navigate(['/primaryTransaction', username]);
-  }
-
-  onSelectSavings(username: string) {
-    this.router.navigate(['/savingsTransaction', username]);
-  }
-
-  enableUser(username: string) {
-    this.userService.enableUser(username).subscribe();
-    location.reload();
-  }
-
-  disableUser(username: string) {
-    this.userService.disableUser(username).subscribe();
-    location.reload();
-  }
-
+  // onSelectPrimary(username: string) {
+  //   this.router.navigate(['/primaryTransaction', username]);
+  // }
+  //
+  // onSelectSavings(username: string) {
+  //   this.router.navigate(['/savingsTransaction', username]);
+  // }
+  //
+  // enableUser(username: string) {
+  //   // this.userService.enableUser(username).subscribe();
+  //   // location.reload();
+  // }
+  //
+  // disableUser(username: string) {
+  //   // this.userService.disableUser(username).subscribe();
+  //   // location.reload();
+  // }
 
   ngOnInit() {
+    this.getUsers();
   }
 
 }

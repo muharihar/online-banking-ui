@@ -1,32 +1,70 @@
 <h1>User Profile Page</h1>
+<br/><br/>
 
-<table id="userTable" class="table table-striped" cellspacing="0" width="100%">
-  <thead>
-  <tr>
-    <th>User Name</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Primary Account</th>
-    <th>Savings Account</th>
-    <th>Enabled</th>
-    <th>Action</th>
-  </tr>
-  </thead>
+<!--<table id="userTable" class="table table-striped" cellspacing="0" width="100%">-->
+  <!--<thead>-->
+  <!--<tr>-->
+    <!--<th>User Name</th>-->
+    <!--<th>First Name</th>-->
+    <!--<th>Last Name</th>-->
+    <!--<th>Email</th>-->
+    <!--<th>National ID Number</th>-->
+    <!--&lt;!&ndash;<th>Primary Account</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Savings Account</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Enabled</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Action</th>&ndash;&gt;-->
+  <!--</tr>-->
+  <!--</thead>-->
+  <!--<tbody>-->
+  <!--&lt;!&ndash;<tr *ngFor="let user of userInfo">&ndash;&gt;-->
+  <!--<tr>-->
+    <!--<td>User Name should be here</td>-->
+    <!--<td>{{userInfo?.first_name}}</td>-->
+    <!--<td>{{userInfo?.last_name}}</td>-->
+    <!--<td>{{userInfo?.email}}</td>-->
+    <!--<td>{{userInfo?.national_id}}</td>-->
+    <!--&lt;!&ndash;<td><a (click)="onSelectPrimary(user.username)" style="cursor: pointer;">{{user.primaryAccount.accountBalance}}</a></td>&ndash;&gt;-->
+    <!--&lt;!&ndash;<td><a (click)="onSelectSavings(user.username)" style="cursor: pointer;">{{user.savingsAccount.accountBalance}}</a></td>&ndash;&gt;-->
+    <!--&lt;!&ndash;<td>{{user.enabled}}</td>&ndash;&gt;-->
+    <!--&lt;!&ndash;<td [hidden]="user.enabled"><a (click)="enableUser(user.username)" style="cursor: pointer;">Enable</a></td>&ndash;&gt;-->
+    <!--&lt;!&ndash;<td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td>&ndash;&gt;-->
+  <!--</tr>-->
+  <!--</tbody>-->
+<!--</table>-->
+
+<table  class="table table-striped" cellspacing="0" width="100%">
   <tbody>
-  <tr *ngFor="let user of userList">
-    <td>{{user.username}}</td>
-    <td>{{user.firstName}}</td>
-    <td>{{user.lastName}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.phone}}</td>
-    <td><a (click)="onSelectPrimary(user.username)" style="cursor: pointer;">{{user.primaryAccount.accountBalance}}</a></td>
-    <td><a (click)="onSelectSavings(user.username)" style="cursor: pointer;">{{user.savingsAccount.accountBalance}}</a></td>
-    <td>{{user.enabled}}</td>
-    <td [hidden]="user.enabled"><a (click)="enableUser(user.username)" style="cursor: pointer;">Enable</a></td>
-    <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td>
+  <tr>
+    <td style="font-weight:bold">User Name</td>
+    <td>UN</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">User ID</td>
+    <td>{{userInfo?.user_id}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">First Name</td>
+    <td>{{userInfo?.first_name}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">Last Name</td>
+    <td>{{userInfo?.last_name}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">National ID Number</td>
+    <td>{{userInfo?.national_id}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">Address</td>
+    <td>{{userInfo?.address}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">DOB</td>
+    <td>{{userInfo?.last_name}}</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold">E Mail</td>
+    <td>{{userInfo?.email}}</td>
   </tr>
   </tbody>
 </table>
-

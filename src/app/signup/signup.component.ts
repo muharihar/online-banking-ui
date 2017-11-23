@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   }
 
   getUserInfo(){
-    this.signupService.getUserInfo(this.userid).subscribe(
+    this.signupService.getUserInfo().subscribe(
       res => {
         this.userList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
         console.log(this.userList);

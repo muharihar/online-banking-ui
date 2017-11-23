@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   loggedIn: boolean;
+  errState: boolean;
 
   constructor(private loginService: LoginService, private router : Router) {
     if(localStorage.getItem('PortalAdminHasLoggedIn') == '' || localStorage.getItem('PortalAdminHasLoggedIn') == null) {
@@ -21,13 +22,16 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.loginService.logout().subscribe(
         res => {
-          //console.log("Arrived : " + this.loggedIn);
-          localStorage.setItem("PortalAdminHasLoggedIn",'');
-          location.reload();
-          this.router.navigate(['/login']);
+          console.log("Response Recieved!!");
         },
         err => console.log(err)
     );
+    localStorage.setItem("PortalAdminHasLoggedIn",'');
+    location.reload();
+  }
+
+ public handleError (){
+    console.log("In the function");
   }
 
   getDisplay() {
