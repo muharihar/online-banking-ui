@@ -18,6 +18,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import {AppointmentService} from "./appointment.service";
 import {TokenComponent} from "./signup/token.component";
 import {AccountComponent} from "./account/account.component";
+import {ErrorComponent} from "./error/error.component";
+import {GenericService} from "./gneric.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {AccountComponent} from "./account/account.component";
     PrimaryTransactionComponent,
     SavingsTransactionComponent,
     AppointmentComponent,
-    AccountComponent
+    AccountComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import {AccountComponent} from "./account/account.component";
       UserService,
       SignupService,
       TokenService,
+      GenericService,
       AppointmentService
   ],
   bootstrap: [AppComponent]

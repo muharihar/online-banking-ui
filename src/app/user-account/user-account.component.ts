@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {SignupService} from '../signup.service';
+import {GenericService} from '../gneric.service';
 
 @Component({
   selector: 'app-user-account',
@@ -10,7 +11,7 @@ export class UserAccountComponent implements OnInit {
 
   userInfo: Object;
 
-  constructor(private userService: SignupService, private router: Router) {
+  constructor(private userService: SignupService, private genService: GenericService, private router: Router) {
   }
 
   getUsers() {
@@ -20,7 +21,9 @@ export class UserAccountComponent implements OnInit {
           console.log(this.userInfo);
           console.log(JSON.stringify(res));
         },
-        error => console.log(error)
+        error => {console.log(error)
+          this.genService.hadleError(error.toString());
+        }
     )
   }
 

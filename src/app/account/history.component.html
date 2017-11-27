@@ -1,0 +1,28 @@
+<h1>Account Information Page</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Account Number</th>
+    <th>Account Type</th>
+    <th>Date</th>
+    <th>Balance</th>
+    <th>Account State</th>
+    <th>Interest Rate</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of accountList">
+    <td>{{account?.acc_number}}</td>
+    <td>{{account?.account_name}}</td>
+    <td>{{account?.created_date}}</td>
+    <td>{{account?.current_balance}}</td>
+    <td>{{account?.account_status}}</td>
+    <td>{{account?.interest_rate}} %</td>
+    <td [hidden]=""><a style="cursor: pointer;">View History</a></td>
+    <!--<td [hidden]="appointment.confirmed"><a (click)="confirmAppointment(appointment.id)" style="cursor: pointer;">View History</a></td>-->
+    <!-- <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td> -->
+  </tr>
+  </tbody>
+</table>

@@ -8,6 +8,8 @@ import {PrimaryTransactionComponent} from "./primary-transaction/primary-transac
 import {SavingsTransactionComponent} from "./savings-transaction/savings-transaction.component";
 import {AppointmentComponent} from "./appointment/appointment.component";
 import {AccountComponent} from "./account/account.component";
+import {ErrorComponent} from "./error/error.component";
+import {HistoryComponent} from "./account/history.component";
 
 
 const appRoutes: Routes = [
@@ -47,6 +49,14 @@ const appRoutes: Routes = [
     {
     path: 'accounts',
     component: AccountComponent
+  },
+  {
+    path: 'history',
+    component: HistoryComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   }
 ];
 
