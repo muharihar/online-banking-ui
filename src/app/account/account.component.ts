@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../user.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class AccountComponent implements OnInit {
   savingsTransactionList: Object[];
   accountList: Object[];
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) {
     this.route.params.forEach((params: Params) => {
       this.username = params['username'];
     });
@@ -29,6 +29,18 @@ export class AccountComponent implements OnInit {
         },
         error => console.log(error)
     )
+  }
+
+  getDisplay() {
+    //console.log("User Login : " + this.loggedIn);
+        return "none";
+
+  }
+
+  getHistory (acc: string){
+    localStorage.setItem('accForHistory', acc);
+    this.router.navigate(['./history']);
+    console.log("Thus us is the get history method" + acc);
   }
 
   ngOnInit() {}

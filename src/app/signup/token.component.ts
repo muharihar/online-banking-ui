@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from '../token.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ export class TokenComponent implements OnInit {
   signupSession: boolean;
   otp: string;
 
-  constructor (private tokenService: TokenService) {
+  constructor (private tokenService: TokenService, private router : Router) {
     // if(localStorage.getItem('PortalAdminHasLoggedIn') == '' || localStorage.getItem('PortalAdminHasLoggedIn') == null) {
     //   this.loggedIn = false;
     // } else {
@@ -26,8 +27,16 @@ export class TokenComponent implements OnInit {
         localStorage.setItem('SignupSessionValid', 'true');
         location.assign("./signup");
       },
-      err => console.log(err)
+      err => {console.log(err)
+              this.errorHnadler(err.toString());
+      }
     );
+  }
+
+  // Function ti handle Error
+  errorHnadler(errMsg: string) {
+    localStorage.setItem('err', errMsg);
+    this.router.navigate(["./error"]);
   }
 
   ngOnInit() {}

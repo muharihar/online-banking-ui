@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
         err => console.log(err)
     );
     localStorage.setItem("PortalAdminHasLoggedIn",'');
-    location.reload();
+    //location.reload();
     this.router.navigate(["./login"]);
   }
 

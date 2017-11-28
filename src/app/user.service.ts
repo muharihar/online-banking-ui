@@ -14,6 +14,11 @@ export class UserService {
     return this.http.get(url, { withCredentials: true });
   }
 
+  getAccountHistory(){
+    let url = balURL + "/accounthistory" + "?acc=" +localStorage.getItem('accForHistory');
+    return this.http.get(url, {withCredentials: true});
+  }
+
   getUsers() {
     let url = "http://localhost:9090/api/getuser";
     return this.http.get(url, { withCredentials: true });

@@ -4,28 +4,23 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
-  selector: 'account-transaction',
-  templateUrl: 'account.component.html',
+  selector: 'app-history',
+  templateUrl: 'history.component.html',
 })
 export class HistoryComponent implements OnInit {
 
   username:string;
-  savingsTransactionList: Object[];
-  accountList: Object[];
+  accountTransactionList: Object[];
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
-    this.route.params.forEach((params: Params) => {
-      this.username = params['username'];
-    });
-
-    this.getSavingsAccountList();
+    this.getAccountHistoryList();
   }
 
-  getSavingsAccountList() {
-    this.userService.getAccountList().subscribe(
+  getAccountHistoryList() {
+    this.userService.getAccountHistory().subscribe(
         res => {
           console.log(JSON.parse(JSON.stringify(res))._body);
-          this.accountList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
+          this.accountTransactionList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
         },
         error => console.log(error)
     )

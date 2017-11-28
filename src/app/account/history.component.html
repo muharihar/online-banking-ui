@@ -1,26 +1,24 @@
-<h1>Account Information Page</h1>
+<h3>Account History Page</h3>
 
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Account Number</th>
-    <th>Account Type</th>
+    <th>From Acc Number</th>
+    <th>Transaction Type</th>
     <th>Date</th>
-    <th>Balance</th>
-    <th>Account State</th>
-    <th>Interest Rate</th>
-    <th>Action</th>
+    <th>Amount</th>
+    <th>To Account</th>
+    <th>Currency</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let account of accountList">
-    <td>{{account?.acc_number}}</td>
-    <td>{{account?.account_name}}</td>
-    <td>{{account?.created_date}}</td>
-    <td>{{account?.current_balance}}</td>
-    <td>{{account?.account_status}}</td>
-    <td>{{account?.interest_rate}} %</td>
-    <td [hidden]=""><a style="cursor: pointer;">View History</a></td>
+  <tr *ngFor="let transaction of accountTransactionList">
+    <td>{{transaction?.From_Account_No}}</td>
+    <td>{{transaction?.account_name}}</td>
+    <td>{{transaction?.Transaction_Date}}</td>
+    <td>{{transaction?.Amount_Transferred}}</td>
+    <td>{{transaction?.Beneficiary_Acc_No}}</td>
+    <td>{{transaction?.Currency}}</td>
     <!--<td [hidden]="appointment.confirmed"><a (click)="confirmAppointment(appointment.id)" style="cursor: pointer;">View History</a></td>-->
     <!-- <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td> -->
   </tr>

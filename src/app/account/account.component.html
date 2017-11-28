@@ -20,9 +20,13 @@
     <td>{{account?.current_balance}}</td>
     <td>{{account?.account_status}}</td>
     <td>{{account?.interest_rate}} %</td>
-    <td [hidden]=""><a style="cursor: pointer;">View History</a></td>
+    <td [hidden]=""><a style="cursor: pointer;" (click)="getHistory(account.acc_number)">View History</a></td>
     <!--<td [hidden]="appointment.confirmed"><a (click)="confirmAppointment(appointment.id)" style="cursor: pointer;">View History</a></td>-->
     <!-- <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td> -->
   </tr>
   </tbody>
 </table>
+
+<div [style.display]="getDisplay()">
+  <h1>Account Information Page</h1>
+</div>
