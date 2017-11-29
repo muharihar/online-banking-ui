@@ -16,12 +16,14 @@ export class PayorderComponent implements OnInit {
   ammount:string;
 
   savingsAccList: Object[];
+  payorderList: Object[];
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
     // this.route.params.forEach((params: Params) => {
     //   this.username = params['username'];
     // });
     this.getSavingsTransactionList();
+    this.getPayOrderList();
   }
 
   getSavingsTransactionList() {
@@ -36,6 +38,16 @@ export class PayorderComponent implements OnInit {
 
   addPayOrder() {
     this.userService.addPayorderItem(this.account, this.toacc, this.ammount, this.day, this.frequency).subscribe(
+      res => {
+        console.log(JSON.parse(JSON.stringify(res))._body);
+        this.savingsAccList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
+      },
+      error => console.log(error)
+    )
+  }
+
+  getPayOrderList(){
+    this.userService.getPayorderList().subscribe(
       res => {
         console.log(JSON.parse(JSON.stringify(res))._body);
         this.savingsAccList = JSON.parse(JSON.parse(JSON.stringify(res))._body);

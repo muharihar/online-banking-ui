@@ -13,7 +13,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let savingsTransaction of savingsAccList">
+  <tr *ngFor="let order of payorderList">
     <td>{{savingsTransaction.date | date: 'MM/dd/yyyy'}}</td>
     <td>{{savingsTransaction.description}}</td>
     <td>{{savingsTransaction.type}}</td>

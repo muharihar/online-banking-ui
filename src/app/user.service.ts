@@ -41,18 +41,8 @@ export class UserService {
     return this.http.post(url, params, {headers: headers, withCredentials: true});
   }
 
-  getSavingsTransactionList(username: string) {
-    let url = "http://localhost:8080/api/user/savings/transaction?username="+username;
-    return this.http.get(url, { withCredentials: true });
-  }
-
-  enableUser (username: string) {
-    let url = "http://localhost:8080/api/user/"+username+"/enable";
-    return this.http.get(url, { withCredentials: true });
-  }
-
-  disableUser (username: string) {
-    let url = "http://localhost:8080/api/user/"+username+"/disable";
+  getPayorderList() {
+    let url = balURL + "/payorder/get";
     return this.http.get(url, { withCredentials: true });
   }
 }
