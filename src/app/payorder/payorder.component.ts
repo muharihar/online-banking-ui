@@ -5,9 +5,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-savings-transaction',
-  templateUrl: './savings-transaction.component.html',
+  templateUrl: './payorder.component.html',
 })
-export class SavingsTransactionComponent implements OnInit {
+export class PayorderComponent implements OnInit {
 
   username:string;
   savingsTransactionList: Object[];

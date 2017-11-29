@@ -1,25 +1,20 @@
-<h1>Appointment List Page</h1>
+<h3>Utility Payment Service</h3>
+<div class="main-center">
+  <form class="form-horizontal" method="post" (ngSubmit)="sendSubmit()">
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Appointment Id</th>
-    <th>User Name</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Confirmed?</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let appointment of appointmentList">
-    <td>{{appointment.id}}</td>
-    <td>{{appointment.user.username}}</td>
-    <td>{{appointment.date | date: 'MM/dd/yyyy - hh:mm'}}</td>
-    <td>{{appointment.description}}</td>
-    <td>{{appointment.confirmed}}</td>
-    <td [hidden]="appointment.confirmed"><a (click)="confirmAppointment(appointment.id)" style="cursor: pointer;">Confirm</a></td>
-    <!-- <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td> -->
-  </tr>
-  </tbody>
-</table>
+    <label for="firstName" class="cols-sm-2 control-label">Utility Provider Name</label>
+    <input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>
+
+    <label for="lastName" class="cols-sm-2 control-label">Bill No / Tel Number</label>
+    <input type="text" class="form-control" value="{{userList?.last_name}}" id="lastName"/>
+
+    <label for="phone" class="cols-sm-2 control-label">Ammount</label>
+    <input type="text" class="form-control" value="{{userList?.national_id}}" id="phone"/>
+
+    <label for="email" class="cols-sm-2 control-label">Remark</label>
+    <input type="text" class="form-control" value="{{userList?.email}}" id="email"/>
+    <br/><br/>
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Sign up!</button>
+    <hr/>
+  </form>
+</div>

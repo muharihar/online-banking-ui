@@ -13,7 +13,7 @@ import {TokenService} from "./token.service";
 import { UserAccountComponent } from './user-account/user-account.component';
 import {UserService} from "./user.service";
 import { PrimaryTransactionComponent } from './primary-transaction/primary-transaction.component';
-import { SavingsTransactionComponent } from './savings-transaction/savings-transaction.component';
+import { PayorderComponent } from './payorder/payorder.component';
 import { AppointmentComponent } from './utility/appointment.component';
 import {AppointmentService} from "./appointment.service";
 import {TokenComponent} from "./signup/token.component";
@@ -31,7 +31,7 @@ import {HistoryComponent} from "./account/history.component";
     SignupComponent,
     UserAccountComponent,
     PrimaryTransactionComponent,
-    SavingsTransactionComponent,
+    PayorderComponent,
     AppointmentComponent,
     AccountComponent,
     ErrorComponent,

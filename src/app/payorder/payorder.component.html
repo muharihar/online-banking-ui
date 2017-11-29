@@ -1,0 +1,97 @@
+<h3>Add a Pay Order</h3>
+<div class="main-center" style="border: medium solid #8a6d3b; padding: 10px">
+  <form class="form-horizontal" method="post" (ngSubmit)="sendSubmit()">
+    <br/>
+    <label for="firstName" class="cols-sm-2 control-label">From Account </label>
+    <!--<input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>-->
+    <br/>
+    <select name="provider">
+      <option value="volvo">Mobitel</option>
+      <option value="saab">Dialog</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <br/><br/>
+    <label for="lastName" class="cols-sm-2 control-label">To Account</label>
+    <input type="text" class="form-control" value="{{userList?.last_name}}" id="lastName"/>
+    <br/>
+    <label for="firstName" class="cols-sm-2 control-label">Frequency</label>
+    <!--<input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>-->
+    <br/>
+    <select name="provider">
+      <option value="volvo">Yearly</option>
+      <option value="saab">Quarterly</option>
+      <option value="fiat">Monthly</option>
+    </select>
+    <br/>
+    <br/>
+    <label for="firstName" class="cols-sm-2 control-label">Day</label>
+    <br/>
+    <select name="provider">
+      <option value="volvo">1</option>
+      <option value="saab">2</option>
+      <option value="fiat">3</option>
+      <option value="audi">5</option>
+      <option value="audi">6</option>
+      <option value="audi">7</option>
+      <option value="audi">8</option>
+      <option value="audi">9</option>
+      <option value="audi">10</option>
+      <option value="audi">11</option>
+      <option value="audi">12</option>
+      <option value="audi">13</option>
+      <option value="audi">14</option>
+      <option value="audi">15</option>
+      <option value="audi">16</option>
+      <option value="audi">17</option>
+      <option value="audi">18</option>
+      <option value="audi">19</option>
+      <option value="audi">20</option>
+      <option value="audi">21</option>
+      <option value="audi">22</option>
+      <option value="audi">23</option>
+      <option value="audi">24</option>
+      <option value="audi">25</option>
+      <option value="audi">26</option>
+      <option value="audi">27</option>
+      <option value="audi">28</option>
+      <option value="audi">29</option>
+      <option value="audi">30</option>
+    </select>
+    <br/><br/>
+    <label for="phone" class="cols-sm-2 control-label">Ammount</label>
+    <input type="text" class="form-control" value="{{userList?.national_id}}" id="phone"/>
+    <br/>
+    <label for="email" class="cols-sm-2 control-label">Remark</label>
+    <input type="text" class="form-control" value="{{userList?.email}}" id="email"/>
+    <br/><br/>
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Add Pay Order</button>
+    <hr/>
+  </form>
+</div>
+<br/><br/>
+<h1>Pay Orders List</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Post Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Amount</th>
+    <th>Available Balance</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let savingsTransaction of savingsTransactionList">
+    <td>{{savingsTransaction.date | date: 'MM/dd/yyyy'}}</td>
+    <td>{{savingsTransaction.description}}</td>
+    <td>{{savingsTransaction.type}}</td>
+    <td>{{savingsTransaction.status}}</td>
+    <td>{{savingsTransaction.amount}}</td>
+    <td>{{savingsTransaction.availableBalance}}</td>
+  </tr>
+  </tbody>
+</table>
