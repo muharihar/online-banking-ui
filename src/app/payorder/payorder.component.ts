@@ -44,7 +44,7 @@ export class PayorderComponent implements OnInit {
       },
       error => console.log(error),
       () => {
-        location.reload();
+        location.reload()
       }
     )
   }
