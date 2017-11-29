@@ -29,6 +29,8 @@ export class NavbarComponent implements OnInit {
     localStorage.setItem("PortalAdminHasLoggedIn",'');
     //location.reload();
     this.router.navigate(["./login"]);
+    location.reload();
+    // this.router.navigate(["./login"]);
   }
 
   getDisplay() {
@@ -39,7 +41,6 @@ export class NavbarComponent implements OnInit {
       return "";
     }
   }
-
   ngOnInit() {
   }
 

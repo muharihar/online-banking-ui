@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import { environment } from 'environments/environment.prod';
 
 const balURL = environment.ballerinaUrl;
@@ -29,6 +29,18 @@ export class UserService {
     return this.http.get(url, { withCredentials: true });
   }
 
+  // Handles parorder adding request
+  addPayorderItem(account: string, toacc: string, ammount: string, day: string, frequency: string){
+    let url = balURL + "/payorder/add";
+    let params = 'fromacc=' +account +"&toacc=" +toacc+ "&ammount=" +ammount+ "&freq=" +frequency+ "&day=" +day;
+    let headers = new Headers(
+      {
+        'Content-Type': 'application/x-www-form-urlencoded'
+        // 'Access-Control-Allow-Credentials' : true
+      });
+    return this.http.post(url, params, {headers: headers, withCredentials: true});
+  }
+
   getSavingsTransactionList(username: string) {
     let url = "http://localhost:8080/api/user/savings/transaction?username="+username;
     return this.http.get(url, { withCredentials: true });
@@ -43,5 +55,4 @@ export class UserService {
     let url = "http://localhost:8080/api/user/"+username+"/disable";
     return this.http.get(url, { withCredentials: true });
   }
-
 }
