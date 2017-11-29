@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
-import { Router } from '@angular/router';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -22,14 +22,17 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.loginService.logout().subscribe(
         res => {
-          console.log("Response Recieved!!");
+          console.log("Successfully loged out!!");
         },
-        err => console.log(err)
+        err => console.log(err),
+        () => {
+          localStorage.setItem("PortalAdminHasLoggedIn",'');
+          //this.router.navigate(["login"]);
+          location.reload();
+        }
     );
-    localStorage.setItem("PortalAdminHasLoggedIn",'');
-    //location.reload();
-    this.router.navigate(["./login"]);
-    location.reload();
+    console.log("Out side the action!!");
+        //location.reload();
     // this.router.navigate(["./login"]);
   }
 
