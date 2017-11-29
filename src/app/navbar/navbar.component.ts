@@ -32,8 +32,6 @@ export class NavbarComponent implements OnInit {
         }
     );
     console.log("Out side the action!!");
-        //location.reload();
-    // this.router.navigate(["./login"]);
   }
 
   getDisplay() {
@@ -46,5 +44,4 @@ export class NavbarComponent implements OnInit {
   }
   ngOnInit() {
   }
-
 }

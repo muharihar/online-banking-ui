@@ -9,17 +9,15 @@
     <th>Frequency</th>
     <th>Day</th>
     <th>Amount</th>
-    <th>Remark</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let order of payorderList">
-    <td>{{savingsTransaction.date | date: 'MM/dd/yyyy'}}</td>
-    <td>{{savingsTransaction.description}}</td>
-    <td>{{savingsTransaction.type}}</td>
-    <td>{{savingsTransaction.status}}</td>
-    <td>{{savingsTransaction.amount}}</td>
-    <td>{{savingsTransaction.availableBalance}}</td>
+    <td>{{order?.acc_number}}</td>
+    <td>{{order?.to_acc_number}}</td>
+    <td>{{order?.frequency}}</td>
+    <td>{{order?.transaction_date}}</td>
+    <td>{{order?.transaction_amount}}</td>
   </tr>
   </tbody>
 </table>
