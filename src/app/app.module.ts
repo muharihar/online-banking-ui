@@ -14,8 +14,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import {UserService} from "./user.service";
 import { PrimaryTransactionComponent } from './primary-transaction/primary-transaction.component';
 import { PayorderComponent } from './payorder/payorder.component';
-import { AppointmentComponent } from './utility/appointment.component';
-import {AppointmentService} from "./appointment.service";
+import { UtilityComponent } from './utility/utility.component';
+import {UtilityService} from "./utility.service";
 import {TokenComponent} from "./signup/token.component";
 import {AccountComponent} from "./account/account.component";
 import {ErrorComponent} from "./error/error.component";
@@ -32,7 +32,7 @@ import {HistoryComponent} from "./account/history.component";
     UserAccountComponent,
     PrimaryTransactionComponent,
     PayorderComponent,
-    AppointmentComponent,
+    UtilityComponent,
     AccountComponent,
     ErrorComponent,
     HistoryComponent
@@ -49,7 +49,7 @@ import {HistoryComponent} from "./account/history.component";
       SignupService,
       TokenService,
       GenericService,
-      AppointmentService
+      UtilityService
   ],
   bootstrap: [AppComponent]
 })
