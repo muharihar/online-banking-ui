@@ -5,7 +5,7 @@ import {TokenComponent} from "./signup/token.component";
 import {SignupComponent} from "./signup/signup.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
 import {PrimaryTransactionComponent} from "./primary-transaction/primary-transaction.component";
-import {AppointmentComponent} from "./utility/appointment.component";
+import {UtilityComponent} from "./utility/utility.component";
 import {AccountComponent} from "./account/account.component";
 import {ErrorComponent} from "./error/error.component";
 import {HistoryComponent} from "./account/history.component";
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'utilitypay',
-        component: AppointmentComponent
+        component: UtilityComponent
     },
     {
     path: 'accounts',
