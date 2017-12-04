@@ -15,6 +15,7 @@ import {UserService} from "./user.service";
 import { PrimaryTransactionComponent } from './primary-transaction/primary-transaction.component';
 import { PayorderComponent } from './payorder/payorder.component';
 import { UtilityComponent } from './utility/utility.component';
+import { CurrencyComponent } from './currency-converter/currency.component';
 import {UtilityService} from "./utility.service";
 import {TokenComponent} from "./signup/token.component";
 import {AccountComponent} from "./account/account.component";
@@ -33,6 +34,7 @@ import {HistoryComponent} from "./account/history.component";
     PrimaryTransactionComponent,
     PayorderComponent,
     UtilityComponent,
+    CurrencyComponent,
     AccountComponent,
     ErrorComponent,
     HistoryComponent

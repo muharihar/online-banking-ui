@@ -1,0 +1,44 @@
+<br/><br/>
+<h3>Currency Converter</h3>
+<div class="main-center" style="border: medium solid #8a6d3b; padding: 10px">
+    <form class="form-horizontal" method="post" (ngSubmit)="payUtilityBill()">
+        <br/>
+        <label for="account" class="cols-sm-2 control-label">From Account </label>
+        <!--<input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>-->
+        <br/>
+        <select id="account" *ngFor="let acc of savingsAccList" [(ngModel)]="account" name="account" >
+            <option value="{{acc?.acc_number}}">{{acc?.acc_number}}</option>
+        </select>
+        <br/><br/>
+        <label class="cols-sm-2 control-label">Service Provider</label>
+        <!--<input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>-->
+        <br/>
+        <select  name="base" [(ngModel)]="provider">
+            <option value="usd">USD</option>
+        </select>
+        <br/>
+        <br/>
+        <select  name="to" [(ngModel)]="provider">
+            <option selected="selected">Select a currency</option>
+            <option value="usd">LKR</option>
+            <option value="usd">AUD</option>
+            <option value="usd">CAD</option>
+            <option value="usd">PLN</option>
+            <option value="usd">MXN</option>
+            <option value="usd">EUR</option>
+        </select>
+        <br/>
+        <br/>
+        <label for="bill" class="cols-sm-2 control-label">Bill Number</label>
+        <input name="bill" type="text" class="form-control" id="bill" [(ngModel)]="billno" required="required"/>
+        <br/>
+        <label for="amount" class="cols-sm-2 control-label" required="required">Amount</label>
+        <input name="amount" type="text" class="form-control" id="amount" [(ngModel)]="amount" required="required"/>
+        <br/>
+        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Pay Utility Bill</button>
+        <hr/>
+    </form>
+</div>
+
+
+
