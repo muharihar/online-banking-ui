@@ -42,7 +42,10 @@ export class PayorderComponent implements OnInit {
         console.log(JSON.parse(JSON.stringify(res))._body);
         this.savingsAccList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
       },
-      error => console.log(error)
+      error => console.log(error),
+      () => {
+        location.reload()
+      }
     )
   }
 
@@ -50,7 +53,7 @@ export class PayorderComponent implements OnInit {
     this.userService.getPayorderList().subscribe(
       res => {
         console.log(JSON.parse(JSON.stringify(res))._body);
-        this.savingsAccList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
+        this.payorderList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
       },
       error => console.log(error)
     )

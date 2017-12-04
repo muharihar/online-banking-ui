@@ -30,8 +30,8 @@
     <label for="account" class="cols-sm-2 control-label">From Account </label>
     <!--<input type="text" class="form-control" value="{{userList?.first_name}}" id="firstName" readonly/>-->
     <br/>
-    <select id="account" *ngFor="let acc of savingsAccList" [(ngModel)]="account" name="account" >
-      <option value="{{acc?.acc_number}}">{{acc?.acc_number}}</option>
+    <select id="account" [(ngModel)]="account" name="account" >
+      <option *ngFor="let acc of savingsAccList" value="{{acc?.acc_number}}">{{acc?.acc_number}}</option>
     </select>
     <br/><br/>
     <label for="toacc" class="cols-sm-2 control-label">To Account</label>
