@@ -9,18 +9,33 @@ import {UserService} from '../user.service';
 })
 export class CurrencyComponent implements OnInit {
 
-  account:string;
-  provider:string;
-  amount:string;
-  billno:string;
+  to:string;
+  from:string;
+  fromamount:string;
+  toamount:string;
 
-  savingsAccList: Object[];
+  currency: Object[];
 
   constructor(private currencyService: GenericService) {
     //this.getSavingsTransactionList();
   }
 
 
-  ngOnInit() {}
+  getCurrency() {
+    this.currencyService.getCurrency(this.from, this.to, this.fromamount).subscribe(
+      res => {
+        console.log(JSON.parse(JSON.stringify(res))._body);
+        this.currency = JSON.parse(JSON.parse(JSON.stringify(res))._body);
+      },
+      error => console.log(error),
+      () => {
+        location.reload();
+      }
+    )
+}
+
+  ngOnInit() {
+  this.getCurrency();
+  }
 
 }

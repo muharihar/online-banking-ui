@@ -13,4 +13,9 @@ export class GenericService {
   hadleError(msg : string) {
   }
 
+  getCurrency(from:string, to: string, amount:string){
+    let url = balURL + "/currency/getExchangeRateValue/" +from+ "/" +to+ "/" + amount;
+    return this.http.get(url, { withCredentials: true });
+  }
+
 }

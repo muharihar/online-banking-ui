@@ -48,7 +48,7 @@ const appRoutes: Routes = [
         component: UtilityComponent
     },
     {
-        path: 'curconveter',
+        path: 'currencyconverter',
         component: CurrencyComponent
     },
     {
