@@ -14,6 +14,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import {UserService} from "./user.service";
 import { PrimaryTransactionComponent } from './primary-transaction/primary-transaction.component';
 import { PayorderComponent } from './payorder/payorder.component';
+import { PayorderViewComponent } from './payorder/poview.components';
 import { UtilityComponent } from './utility/utility.component';
 import { CurrencyComponent } from './currency-converter/currency.component';
 import {UtilityService} from "./utility.service";
@@ -35,6 +36,7 @@ import { AlertService } from './alert.service';
     UserAccountComponent,
     PrimaryTransactionComponent,
     PayorderComponent,
+    PayorderViewComponent,
     UtilityComponent,
     CurrencyComponent,
     AccountComponent,
