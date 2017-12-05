@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../user.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import {AlertService} from '../alert.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class PayorderComponent implements OnInit {
   savingsAccList: Object[];
   payorderList: Object[];
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private userService: UserService, private alertService: AlertService) {
     // this.route.params.forEach((params: Params) => {
     //   this.username = params['username'];
     // });
@@ -42,11 +43,20 @@ export class PayorderComponent implements OnInit {
         console.log(JSON.parse(JSON.stringify(res))._body);
         this.savingsAccList = JSON.parse(JSON.parse(JSON.stringify(res))._body);
       },
-      error => console.log(error),
+      error => {console.log(error)
+      this.onError(error);
+      },
       () => {
         location.reload()
+        this.onSuccess("Successfully Added the PO!!!");
       }
     )
+  }
+  onError(message: string) {
+    this.alertService.error(message);
+  }
+  onSuccess(message: string){
+    this.alertService.success(message);
   }
 
   getPayOrderList(){

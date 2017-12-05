@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   // URL of development API
-  ballerinaUrl: 'https://abcbanking.com/api'
+  ballerinaUrl: 'http://localhost:9090/api'
 };

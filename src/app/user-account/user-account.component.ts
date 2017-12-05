@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {SignupService} from '../signup.service';
 import {GenericService} from '../gneric.service';
+import {AlertService} from '../alert.service';
+
 
 @Component({
   selector: 'app-user-account',
@@ -11,7 +13,7 @@ export class UserAccountComponent implements OnInit {
 
   userInfo: Object;
 
-  constructor(private userService: SignupService, private genService: GenericService, private router: Router) {
+  constructor(private userService: SignupService, private genService: GenericService, private router: Router, private alertService: AlertService) {
   }
 
   getUsers() {
@@ -22,28 +24,14 @@ export class UserAccountComponent implements OnInit {
           console.log(JSON.stringify(res));
         },
         error => {console.log(error)
-          this.genService.hadleError(error.toString());
+          this.onError(error);
         }
     )
   }
 
-  // onSelectPrimary(username: string) {
-  //   this.router.navigate(['/primaryTransaction', username]);
-  // }
-  //
-  // onSelectSavings(username: string) {
-  //   this.router.navigate(['/savingsTransaction', username]);
-  // }
-  //
-  // enableUser(username: string) {
-  //   // this.userService.enableUser(username).subscribe();
-  //   // location.reload();
-  // }
-  //
-  // disableUser(username: string) {
-  //   // this.userService.disableUser(username).subscribe();
-  //   // location.reload();
-  // }
+  onError(message: string) {
+    this.alertService.error(message);
+  }
 
   ngOnInit() {
     this.getUsers();
