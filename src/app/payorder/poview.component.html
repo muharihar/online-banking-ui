@@ -1,0 +1,24 @@
+<div style="border: medium solid #8a6d3b; padding: 10px">
+  <h3>Active Pay Orders List</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>From Account</th>
+      <th>To Account</th>
+      <th>Frequency</th>
+      <th>Day</th>
+      <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of payorderList">
+      <td>{{order?.acc_number}}</td>
+      <td>{{order?.to_acc_number}}</td>
+      <td>{{order?.frequency}}</td>
+      <td>{{order?.transaction_date}}</td>
+      <td>{{order?.transaction_amount}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br/>

@@ -1,28 +1,4 @@
-<br/><br/>
-<div style="border: medium solid #8a6d3b; padding: 10px">
-<h3>Pay Orders List</h3>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>From Account</th>
-    <th>To Account</th>
-    <th>Frequency</th>
-    <th>Day</th>
-    <th>Amount</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let order of payorderList">
-    <td>{{order?.acc_number}}</td>
-    <td>{{order?.to_acc_number}}</td>
-    <td>{{order?.frequency}}</td>
-    <td>{{order?.transaction_date}}</td>
-    <td>{{order?.transaction_amount}}</td>
-  </tr>
-  </tbody>
-</table>
-</div>
-<br/><br/>
+<br/>
 <h3>Add a Pay Order</h3>
 <div class="main-center" style="border: medium solid #8a6d3b; padding: 10px">
   <form class="form-horizontal" method="post" (ngSubmit)="addPayOrder()">

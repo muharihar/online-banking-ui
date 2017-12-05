@@ -1,5 +1,5 @@
-import { ModuleWithProviders }  from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {ModuleWithProviders} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {TokenComponent} from "./signup/token.component";
 import {SignupComponent} from "./signup/signup.component";
@@ -10,43 +10,48 @@ import {AccountComponent} from "./account/account.component";
 import {ErrorComponent} from "./error/error.component";
 import {HistoryComponent} from "./account/history.component";
 import {PayorderComponent} from "./payorder/payorder.component";
+import {PayorderViewComponent} from "./payorder/poview.components";
 
 
 const appRoutes: Routes = [
-    {
-        path: '',
-        redirectTo: '/login',
-        pathMatch: 'full'
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-   {
-        path: 'token',
-        component: TokenComponent
-    },
-    {
-        path: 'signup',
-        component: SignupComponent
-    },
-    {
-        path: 'userProfile',
-        component: UserAccountComponent
-    },
-    {
-        path: 'primaryTransaction/:username',
-        component: PrimaryTransactionComponent
-    },
-    {
-        path: 'payorder',
-        component: PayorderComponent
-    },
-    {
-        path: 'utilitypay',
-        component: UtilityComponent
-    },
-    {
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'token',
+    component: TokenComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'userProfile',
+    component: UserAccountComponent
+  },
+  {
+    path: 'primaryTransaction/:username',
+    component: PrimaryTransactionComponent
+  },
+  {
+    path: 'payorder',
+    component: PayorderComponent
+  },
+  {
+    path: 'viewpayorder',
+    component: PayorderViewComponent
+  },
+  {
+    path: 'utilitypay',
+    component: UtilityComponent
+  },
+  {
     path: 'accounts',
     component: AccountComponent
   },
