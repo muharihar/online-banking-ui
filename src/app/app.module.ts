@@ -22,6 +22,8 @@ import {AccountComponent} from "./account/account.component";
 import {ErrorComponent} from "./error/error.component";
 import {GenericService} from "./gneric.service";
 import {HistoryComponent} from "./account/history.component";
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './alert.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {HistoryComponent} from "./account/history.component";
     CurrencyComponent,
     AccountComponent,
     ErrorComponent,
-    HistoryComponent
+    HistoryComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import {HistoryComponent} from "./account/history.component";
       SignupService,
       TokenService,
       GenericService,
-      UtilityService
+      UtilityService,
+      AlertService
   ],
   bootstrap: [AppComponent]
 })

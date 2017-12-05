@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ballerinaUrl: 'https://abcbanking.com/api'
+  ballerinaUrl: 'http://localhost:9090/api'
 };

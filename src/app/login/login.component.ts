@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../login.service";
 import {Router} from "@angular/router";
+import {AlertService} from '../alert.service';
 
 @Component({
     selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     password: string;
     error: boolean;
 
-    constructor (private loginService: LoginService, private router : Router) {
+    constructor (private loginService: LoginService, private router : Router, private alertService: AlertService) {
       this.error = false;
       if(localStorage.getItem('PortalAdminHasLoggedIn') == null || localStorage.getItem('PortalAdminHasLoggedIn') == '' ) {
             this.loggedIn = false;
@@ -31,10 +32,14 @@ export class LoginComponent implements OnInit {
                 location.reload();
             },
             err => {console.log(err)
-              this.errorHnadler(err.toString());
+              this.onError(err);
             }
         );
     }
+
+  onError(message: string) {
+    this.alertService.error(message);
+  }
 
     // Function ti handle Error
   errorHnadler(errMsg: string) {
