@@ -1,17 +1,27 @@
 <br/><br/>
 <h3>Currency Converter</h3>
 <div class="main-center" style="border: medium solid #8a6d3b; padding: 10px">
+
+
+    <!--<label *ngFor="let acc of savingsAccList" value="{{acc?.USDLKR}}">{{acc?.USDLKR}}</label>-->
+    <b>1 USD equals <input type="text" value="{{currency?.exchangeRate}}" disabled> LKR</b>
+
     <form class="form-horizontal" method="post" (ngSubmit)="getCurrency()">
         <br/>
 
         <table style="width:40%">
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
             <tr class="row2">
                 <th>From</th>
                 <th><select  name="base" [(ngModel)]="from">
                     <option value="USD">USD</option>
                 </select>
                 </th>
-                <th><input name="baseamt" type="text" [(ngModel)]="fromamount"></th>
+                <th><input name="baseamt" type="string" value="1" [(ngModel)]="fromamount"></th>
             </tr>
             <tr>
                 <td>
@@ -29,10 +39,6 @@
                     <option value="EUR">EUR</option>
                 </select>
                 </th>
-            </tr>
-            <tr>
-                <td style="font-weight:bold">Amount</td>
-                <td>{{currency?.toamount}}</td>
             </tr>
         </table>
         <br/>

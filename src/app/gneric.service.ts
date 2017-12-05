@@ -18,4 +18,9 @@ export class GenericService {
     return this.http.get(url, { withCredentials: true });
   }
 
+  getExchangeRate(from:string, to: string){
+    let url = balURL + "/currency/getExchangeRate/" +from+ "/" +to;
+    return this.http.get(url, { withCredentials: true });
+  }
+
 }
