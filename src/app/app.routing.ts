@@ -6,6 +6,7 @@ import {SignupComponent} from "./signup/signup.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
 import {PrimaryTransactionComponent} from "./primary-transaction/primary-transaction.component";
 import {UtilityComponent} from "./utility/utility.component";
+import { CurrencyComponent } from './currency-converter/currency.component';
 import {AccountComponent} from "./account/account.component";
 import {ErrorComponent} from "./error/error.component";
 import {HistoryComponent} from "./account/history.component";
@@ -58,6 +59,10 @@ const appRoutes: Routes = [
   {
     path: 'history',
     component: HistoryComponent
+  },
+  {
+    path: 'currencyconverter',
+    component: CurrencyComponent
   },
   {
     path: 'error',

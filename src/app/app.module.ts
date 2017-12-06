@@ -16,6 +16,7 @@ import { PrimaryTransactionComponent } from './primary-transaction/primary-trans
 import { PayorderComponent } from './payorder/payorder.component';
 import { PayorderViewComponent } from './payorder/poview.components';
 import { UtilityComponent } from './utility/utility.component';
+import { CurrencyComponent } from './currency-converter/currency.component';
 import {UtilityService} from "./utility.service";
 import {TokenComponent} from "./signup/token.component";
 import {AccountComponent} from "./account/account.component";
@@ -37,6 +38,7 @@ import { AlertService } from './alert.service';
     PayorderComponent,
     PayorderViewComponent,
     UtilityComponent,
+    CurrencyComponent,
     AccountComponent,
     ErrorComponent,
     HistoryComponent,
